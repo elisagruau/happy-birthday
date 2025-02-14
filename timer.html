@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C'est triste de vieillir</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <section class="anniversaire-container">
+            <h2 id="anniversaire-message" class="anniversaire-message">Joyeux Anniversaire !</h2>
+        </section>
+
+        <section class="countdown__container">
+            <h1 class="countdown__title">
+                Temps restant avant la 
+                <div class="countdown__title__content">
+                    <div class="title--old">vieillesse</div>
+                    <div class="title--trentaine">trentaine</div>
+                </div>
+            </h1>
+            <div id="countdown" class="countdown">
+                <div class="countdown-timer">
+                    <span id="days"></span>
+                    <span>jours</span>
+                </div>
+                <div class="countdown-timer">
+                    <span id="hours"></span>
+                    <span>heures</span>
+                </div>
+                <div class="countdown-timer">
+                    <span id="minutes"></span>
+                    <span>minutes</span>
+                </div>
+                <div class="countdown-timer">
+                    <span id="seconds"></span>
+                    <span>secondes</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="calendar-container">
+            <div class="calendar-header">
+                <button id="prevMonth" class="calendar-nav-button">&#10094;</button>
+                <h2 id="monthYear"></h2>
+                <button id="nextMonth" class="calendar-nav-button">&#10095;</button>
+            </div>
+            <table class="calendar">
+                <thead>
+                    <tr>
+                        <th>Lun</th>
+                        <th>Mar</th>
+                        <th>Mer</th>
+                        <th>Jeu</th>
+                        <th>Ven</th>
+                        <th>Sam</th>
+                        <th>Dim</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

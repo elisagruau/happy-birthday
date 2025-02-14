@@ -1,0 +1,218 @@
+:root {
+    --primary-color: #E9C8CE;
+    --secondary-color: #81657C;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: "Aref Ruqaa Ink", serif;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+/* Countdown styles */
+.countdown__container {
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.countdown__title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.countdown__title__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.title--old {
+    text-decoration: line-through;
+    font-size: 1.1rem;
+}
+
+.title--trentaine {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+}
+
+.countdown {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    width: 100%;
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.countdown-timer span:first-child {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.countdown-timer span:last-child {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+}
+
+/* Calendar styles */
+.calendar-container {
+    background: #DEABAF;
+    width: 110%; /* Augmentation de la largeur */
+    margin-left: -5%; /* Centrage */
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+}
+
+.calendar-header h2 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    text-align: center;
+    flex-grow: 1;
+}
+
+.calendar-nav-button {
+    background: var(--secondary-color);
+    border: none;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.calendar thead {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.calendar th,
+.calendar td {
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 0.8rem 0;
+    font-size: 1rem;
+}
+
+.calendar th {
+    font-weight: normal;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.calendar td {
+    text-align: center;
+}
+
+.calendar td:not(.empty) {
+    cursor: pointer;
+}
+
+.calendar td.past-day {
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    font-weight: 900;
+    color: white;
+}
+
+/* Animation styles */
+.anniversaire-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.anniversaire-message {
+    font-size: 2rem;
+    color: #ff4081;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: none;
+}
+
+@keyframes flyUp {
+    to {
+        transform: translateY(-1500px); /* Un peu plus loin pour s'assurer que tous les ballons sortent */
+    }
+}
+
+.balloon {
+    position: absolute;
+    width: 60px; /* Légèrement plus petits pour en mettre plus */
+    height: auto;
+    opacity: 1; /* Opacité maximale */
+}
+
+/* Empty cell style */
+.empty {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Today highlight */
+.today {
+    background: rgba(129, 101, 124, 0.1);
+    font-weight: bold;
+    color: var(--secondary-color);
+}
